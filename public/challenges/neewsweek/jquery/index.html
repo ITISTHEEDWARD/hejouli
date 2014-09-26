@@ -39,5 +39,16 @@
         </div>
     </div>
     <script src="app.js"></script>
+    <script id="ranking-template" type="text/template">
+    <table>
+      <% _.each( items, function( item, id ) { %>
+            <tr>
+            <td><%= item.name %></td>
+            <td><%= item.rank %></td>
+            <td><%= item.state %></td>
+            </tr>
+        <% }); %>
+    </table>
+</script>
   </body>
 </html>

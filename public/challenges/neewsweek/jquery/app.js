@@ -11,7 +11,13 @@ var newsweekData,
         return q;
     },
     renderData = function(data){
+        var template = _.template($('script#ranking-template').html());
         newsweekData = data;
+        var njData = [];
+        newsweekData.results.forEach(function(item, i){
+            if (item.state == 'NJ') njData.push(item);
+        });
+        $('#page-content').html(template({items: njData}))
     };
 
 $(
